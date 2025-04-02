@@ -1,2 +1,2 @@
 # sessions-lab
-Sessions Lab for Web Development Server Side module
+Sessions Lab for Web Development Server Side module.
