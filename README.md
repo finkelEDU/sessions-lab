@@ -2,7 +2,7 @@
 Sessions Lab for Web Development Server Side module.
 
 --PART 6 STUFF--
-PAGES LOGGED OUT USERS CAN ACCESS IN PUBLIC FOLDER
+Pages accessable to logged out users:
 other.php
 another.php
 
