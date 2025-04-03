@@ -2,19 +2,7 @@
     <title>Contacts page</title>
   </head>
   
-  
-  <body>
-    <div class="container">
-      <div class="header clearfix">
-        <nav>
-          <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="about.php">About</a></li>
-            <li><a href="contacts.php">Contact</a></li>
-          </ul>
-        </nav>
-        <h3 class="text-muted">PHP Login exercise - Contacts page</h3>
-      </div>
+<?php include '../template/nav.php';?>
 
         <div class="mainarea">
 		

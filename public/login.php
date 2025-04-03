@@ -1,6 +1,9 @@
 <?php
 require_once ('config.php');
+require "../common.php";
 session_start();
+
+	
 ?>
 
 <!DOCTYPE html>
@@ -20,9 +23,9 @@ session_start();
     <form action="" method="post" name="Login_Form" class="form-signin">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputUsername" >Username</label>
-        <input name="Username" type="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+        <input name="inputUsername" type="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
         <label for="inputPassword">Password</label>
-        <input name="Password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input name="inputPassword" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
         <div class="checkbox">
             <label>
                 <input type="checkbox" value="remember-me"> Remember me
@@ -33,10 +36,17 @@ session_start();
     </form>
 	
 	<hr><a href="index.php">Go to Home</a><br>
+	<hr><a href="signup.php">Sign Up</a><br>
+	<hr><a href="other.php">Other Page (No login needed)</a><br>
+	<hr><a href="another.php">Another Page (No login needed)</a><br>
 	
 	<?php
-		if(isset($_POST["Submit"])){
-			if(($_POST["Username"] == $Username) && ($_POST["Password"] == $Password)){
+		require "../src/login_logic.php";
+		$login = new login_logic();
+		$login->check();
+	
+		/*if(isset($_POST["Submit"])){
+			if((escape($_POST["Username"]) == $Username) && (escape($_POST["Password"]) == $Password)){
 				$_SESSION["Username"] = $Username;
 				$_SESSION["Active"] = true;
 				
@@ -45,7 +55,7 @@ session_start();
 			}else{
 				echo "Incorrect Username or Password";
 			}
-		}
+		}*/
 	?>
 	
 	
