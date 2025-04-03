@@ -1,7 +1,16 @@
-<?php require_once ('config.php'); ?>
+<?php
+require_once ('config.php');
+session_start();
+?>
 
-<?php require_once('../template/header.php'); ?>
-<link rel="stylesheet" type="text/css" href="../css/signin.css">
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, inital-scale=1">
+	<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="../css/signin.css">
     <title>Sign in</title>
 </head>
 
@@ -28,9 +37,11 @@
 	<?php
 		if(isset($_POST["Submit"])){
 			if(($_POST["Username"] == $Username) && ($_POST["Password"] == $Password)){
-				echo "Success";
-				
 				$_SESSION["Username"] = $Username;
+				$_SESSION["Active"] = true;
+				
+				header("location:index.php");
+				exit;
 			}else{
 				echo "Incorrect Username or Password";
 			}
